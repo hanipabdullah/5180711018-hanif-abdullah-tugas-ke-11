@@ -1,0 +1,139 @@
+#include <iostream>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+
+
+using namespace::std;
+struct da{
+int har,bk;
+char nama[50];
+float tobar;};
+struct member{
+string nama,nomor;
+};
+da input[100];
+da sorti;
+
+int i,a,n;
+float total=0,h,j;
+
+
+
+int main(){
+
+    cout<<" **selamat datang di mini market** "<<endl;
+    cout<<"       **hanip sejahtra**          "<<endl;
+    cout<<endl;
+cout<<endl<<"================================="<<endl;
+string memb,nomormrm,nampel, benar,out;
+char ke;
+float dis,totbar,total=0,pot;
+int i,n;
+member mem[5];
+mem [0].nama="Bayu";
+mem [0].nomor="A001";
+mem [1].nama="Irvan";
+mem [1].nomor="A002";
+mem [2].nama="Susiati";
+mem [2].nomor="A003";
+mem [3].nama="Diana";
+mem [3].nomor="A007";
+mem [4].nama="Roni";
+mem [4].nomor="A008";
+
+cout<<"apakah anda member? :"; cin>>memb;
+if (memb=="t"){
+        cout<<"Nama pelanggan :"; cin>>nampel;
+        dis=1;
+        pot=0;
+        out="nonmem";}
+else if (memb=="y"){
+cout<<"nomor member :";cin>>nomormrm;
+for(i=0;i<5;i++){
+
+    if(nomormrm==mem[i].nomor){
+        benar="y";
+        ke=i;}
+}
+if (benar=="y"){
+    cout<<"member yang ditemukan"<<endl;
+    cout<<"nomor :"<<mem[ke].nomor<<endl;
+    cout<<"nama  :"<<mem[ke].nama<<endl;
+    dis=0.95;
+    pot=5;
+    out="mem";
+}
+else {cout<<"Nomor member tidakditemukan !!!"<<endl;
+      cout<<"Nama pelanggan :"; cin>>nampel;
+        dis=1;
+        pot=0;
+        out="nonmem";}
+}
+
+
+
+
+
+cout<<" Jumlah Barang Belanja : ";
+cin>>n;cout<<endl;
+for (i=0;i<n;i++){
+    cout<<"       Barang ke-"<<i+1<<endl;
+    cout<<" NAMA Barang       :" ;cin>>input[a].nama;
+    cout<<" HARGA Barang      :" ;cin>>input[a].har;
+    h=input[a].har;
+    cout<<" JUMLAH Barang     :" ;cin>>input[a].bk;
+    j=input[a].bk;
+    a++;
+    input[a].tobar=j*h;
+    cout<<"harga total      :"<<input[a].tobar<<endl;
+total=total+input[a].tobar;
+    }
+
+ int b;
+ for(i=0;i<n;i++){
+        for(b=0;b<n-1;b++){
+
+        if(input[b].har>input[b+1].har)
+    {
+        sorti.har=input[b].har;
+        input[b].har=input[b+1].har;
+        input[b+1].har=sorti.har;
+
+        strcpy(sorti.nama,input[b].nama);
+        strcpy(input[b].nama,input[b+1].nama);
+        strcpy(input[b+1].nama,sorti.nama);
+
+        sorti.bk=input[b].bk;
+        input[b].bk=input[b+1].bk;
+        input[b+1].bk=sorti.bk;
+
+
+}   }   }
+
+getch();system ("CLS");
+
+cout<<endl<<"----------------------------------------------"<<endl;
+a=b;
+cout<<"     Barang belanjaan"<<endl<<endl;
+for(i=0;i<=a;i++){
+    cout<<"         Barang ke-"<<i+1<<endl<<endl;
+    cout<<" HARGA       :" <<input[i].har<<endl;
+    cout<<" BANYAK      :" <<input[i].bk<<endl;
+    cout<<" NAMA        :" <<input[i].nama<<endl;
+
+
+    }
+
+
+cout<<endl<<"--------------------------------------------------";
+
+cout<<endl<<"total harga belanjaan anda = "<<total*dis;
+cout<<endl<<"---------------------------------------------------";
+
+cout<<endl<<endl<<endl;
+
+
+
+
+}
